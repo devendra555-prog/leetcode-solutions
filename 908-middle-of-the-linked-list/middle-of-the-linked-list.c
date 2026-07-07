@@ -14,9 +14,8 @@ struct ListNode* middleNode(struct ListNode* head) {
         count++;
     }
     int a=count/2;
-    a--;
 
-    while(a>=0) {
+    while(a>0) {
         pos=pos->next;
         a--;       
     }
