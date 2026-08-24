@@ -8,7 +8,7 @@ int reverse(int x) {
         int rem = temp % 10;
         temp = temp / 10;
 
-        // Overflow check
+
         if (ans > INT_MAX / 10 || 
             (ans == INT_MAX / 10 && rem > 7)) {
             return 0;
