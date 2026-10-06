@@ -1,15 +1,22 @@
 class Solution {
 public:
     int arrangeCoins(int n) {
-            long long int i=1;
-    long long int temp=n;
+        long long low = 1;
+        long long high = n;
 
-    while(temp>=0) {
-        temp=temp-i;
-        i++;
+        while (low <= high) {
+            long long mid = low + (high - low) / 2;
 
-    }
-    return i-2;
-        
+            long long coins = mid * (mid + 1) / 2;
+
+            if (coins <= n) {
+                low = mid + 1;
+            }
+            else {
+                high = mid - 1;
+            }
+        }
+
+        return high;
     }
 };
